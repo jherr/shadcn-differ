@@ -10,6 +10,8 @@ This CLI tool figures out the difference between the initial commit of a ShadCN 
 4. Make your updates to the project
 5. Run the CLI tool; `npx shadcn-differ`
 
+The reason we are recreating the initial commit is so that the resulting JSON output is only the changes to the project after ShadCN was added, and not the entire project history.
+
 You can then take the resulting JSON ouput and host it on a URL, then use that with the ShadCN CLI to generate a new project or add to an existing project.
 
 ```bash
