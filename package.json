@@ -1,0 +1,19 @@
+{
+  "name": "shadcn-differ",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.mjs",
+  "bin": "index.mjs",
+  "scripts": {
+    "test": "npx vitest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^12.1.0"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.1"
+  }
+}

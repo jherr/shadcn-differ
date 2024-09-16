@@ -1,0 +1,129 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`fixture tests > should diff a non-src directory project 1`] = `
+{
+  "cssVars": {},
+  "dependencies": [],
+  "devDependencies": [],
+  "files": [
+    {
+      "content": "example env;",
+      "path": "./.env.example",
+      "target": "~/.env.example",
+      "type": "registry:example",
+    },
+    {
+      "content": "page;
+",
+      "path": "./app/page.tsx",
+      "target": "./app/page.tsx",
+      "type": "registry:example",
+    },
+    {
+      "content": "comp;
+",
+      "path": "./components/comp.tsx",
+      "target": undefined,
+      "type": "registry:block",
+    },
+    {
+      "content": "new-ui-comp;",
+      "path": "./components/ui/new-ui-comp.tsx",
+      "target": undefined,
+      "type": "registry:ui",
+    },
+    {
+      "content": "hook;
+",
+      "path": "./hooks/hook.ts",
+      "target": undefined,
+      "type": "registry:hook",
+    },
+    {
+      "content": "lib;
+",
+      "path": "./lib/lib.ts",
+      "target": undefined,
+      "type": "registry:lib",
+    },
+    {
+      "content": "non - src - sub;
+",
+      "path": "./non-src-sub/test.ts",
+      "target": "~/non-src-sub/test.ts",
+      "type": "registry:example",
+    },
+  ],
+  "meta": {},
+  "name": "example",
+  "registryDependencies": [
+    "select",
+  ],
+  "tailwind": {},
+  "type": "registry:block",
+}
+`;
+
+exports[`fixture tests > should diff a src directory project 1`] = `
+{
+  "cssVars": {},
+  "dependencies": [],
+  "devDependencies": [],
+  "files": [
+    {
+      "content": "example env;",
+      "path": "./.env.example",
+      "target": "~/.env.example",
+      "type": "registry:example",
+    },
+    {
+      "content": "non - src - sub;
+",
+      "path": "./non-src-sub/test.ts",
+      "target": "~/non-src-sub/test.ts",
+      "type": "registry:example",
+    },
+    {
+      "content": "page;
+",
+      "path": "./app/page.tsx",
+      "target": "./app/page.tsx",
+      "type": "registry:example",
+    },
+    {
+      "content": "comp;
+",
+      "path": "./components/comp.tsx",
+      "target": undefined,
+      "type": "registry:block",
+    },
+    {
+      "content": "new-ui-comp;",
+      "path": "./components/ui/new-ui-comp.tsx",
+      "target": undefined,
+      "type": "registry:ui",
+    },
+    {
+      "content": "hook;
+",
+      "path": "./hooks/hook.ts",
+      "target": undefined,
+      "type": "registry:hook",
+    },
+    {
+      "content": "lib;
+",
+      "path": "./lib/lib.ts",
+      "target": undefined,
+      "type": "registry:lib",
+    },
+  ],
+  "meta": {},
+  "name": "example",
+  "registryDependencies": [
+    "select",
+  ],
+  "tailwind": {},
+  "type": "registry:block",
+}
+`;
