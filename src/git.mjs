@@ -100,7 +100,7 @@ export function scanForFiles(startDir, checkFile = false) {
         }
       } else if (
         !checkFile ||
-        (checkFile && checkIfFileIsChanged(entry.name))
+        (checkFile && checkIfFileIsChanged(relativeFilePath))
       ) {
         if (!EXCLUDE_FILES.includes(entry.name) && !ignorer(relativeFilePath)) {
           foundFiles.push({
