@@ -1,8 +1,5 @@
-import path from "node:path";
-
 import {
   findComponentFiles,
-  readComponentsManifest,
   getAliasedPaths,
   isBuiltinComponent,
 } from "./components.mjs";

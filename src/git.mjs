@@ -1,6 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import { execSync } from "node:child_process";
+import ignore from "ignore";
+import { start } from "node:repl";
 
 const INITIAL_DIR = "_initial";
 
@@ -75,6 +77,16 @@ function checkIfFileIsChanged(relativeFilePath) {
 export function scanForFiles(startDir, checkFile = false) {
   const foundFiles = [];
 
+  let ignorer = () => false;
+  if (fs.existsSync(path.join(startDir, ".gitignore"))) {
+    const gitIgnore = ignore().add(
+      fs.readFileSync(path.join(startDir, ".gitignore")).toString()
+    );
+    ignorer = (relativeFilePath) => {
+      return gitIgnore.ignores(relativeFilePath);
+    };
+  }
+
   function scanDirectory(dir, relativePath = "") {
     const entries = fs.readdirSync(dir, { withFileTypes: true });
 
@@ -90,7 +102,7 @@ export function scanForFiles(startDir, checkFile = false) {
         !checkFile ||
         (checkFile && checkIfFileIsChanged(entry.name))
       ) {
-        if (!EXCLUDE_FILES.includes(entry.name)) {
+        if (!EXCLUDE_FILES.includes(entry.name) && !ignorer(relativeFilePath)) {
           foundFiles.push({
             path: relativeFilePath,
             content: fs.readFileSync(fullPath, "utf-8"),
