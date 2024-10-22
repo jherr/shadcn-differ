@@ -21,11 +21,11 @@ function addDependencies(
   const initialPackageJson = JSON.parse(initialPackageContents);
   const currentPackageJson = JSON.parse(currentPackageContents);
 
-  output.dependencies = Object.keys(currentPackageJson.dependencies).filter(
-    (dep) => !initialPackageJson.dependencies.hasOwnProperty(dep)
-  );
+  output.dependencies = Object.keys(
+    currentPackageJson.dependencies || {}
+  ).filter((dep) => !initialPackageJson.dependencies.hasOwnProperty(dep));
   output.devDependencies = Object.keys(
-    currentPackageJson.devDependencies
+    currentPackageJson.devDependencies || {}
   ).filter((dep) => !initialPackageJson.devDependencies.hasOwnProperty(dep));
 }
 
